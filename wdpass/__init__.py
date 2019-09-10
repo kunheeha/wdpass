@@ -10,8 +10,9 @@ import argparse
 import subprocess
 
 try:
-    import py_sg
-except ImportError:
+    import py3_sg as py_sg
+except ImportError as e:
+    print(e)
     print("You need to install the 'py_sg' module.")
     sys.exit(1)
 
