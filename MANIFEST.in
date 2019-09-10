@@ -1,3 +1,2 @@
 include README.md
 include LICENSE
-include wdpass/py3_sg.so

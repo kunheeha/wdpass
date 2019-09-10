@@ -22,8 +22,7 @@ setup(name='wdpass',
       entry_points={
           'console_scripts': ['wdpass=wdpass:main'],
       },
-      install_requires=[
-      ],
+      install_requires=["py3_sg"],
       python_requires='>=3.6',
       zip_safe=False,
       keywords='HDD WD MyPassport Unlocker WesternDigital',

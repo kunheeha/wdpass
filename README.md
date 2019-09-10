@@ -1,21 +1,33 @@
 # wdpass
 WD Passport Ultra Complete Utilities for Linux.
 
-<h1> Intro </h1>
+Thanks to:
+- [Dan Lenski](https://github.com/dlenski) for [py_sg](https://pypi.org/project/py_sg/) (Python2)
+- [0-duke](https://github.com/0-duke) and [derekhe](https://github.com/derekhe) for [wdpassport-utils](https://github.com/derekhe/wdpassport-utils) (Python2)
+- [crypto-universe](https://github.com/crypto-universe/) for Python3 migration of [py_sg](https://github.com/crypto-universe/py_sg) and [wdpassport-utils](https://github.com/crypto-universe/wdpassport-utils)
+
+## Intro
 
 This script let you unlock, change password and erase Western Digital Passport devices on Linux platform. 
 
-<h1> Install </h1>
+## Install
 
-In order to run this script you need to install "lsscsi"
+### Install Dependencies:
+- `lsscsi` package or any package provides `lsscsi` command.
+- `<Python.h>` header file in libraries. (`python3-dev` or `python3-devel` package)
+
+For example on Fedora:
+
+```shell
+sudo dnf install lsscsi python3-devel
 ```
-sudo dbf install lsscsi
-pip3 install wdpass --user
+
+### Install `wdpass`
+```shell
+sudo python3 -m pip install wdpass
 ```
 
-
-
-<h1> Usage </h1>
+## Usage
 
 Run script as root. 
 
@@ -68,8 +80,7 @@ If you only want to change password do it as usual.
 The script will try to auto detect the current device path of your WD Passport device.
 If something is wrong or you want to manually specify the device path yourself you can use this option.
 
-<h1>Disclaimer</h1>
-I based my research on Dan Lukes (FreeBSD version) and KenMacD (very simple unlocker) works. 
+## Disclaimer
 I'm in no way sponsored by or connected with Western Digital.
 Use any of the information contained in this repository at your own risk. I accept no
 responsibility.

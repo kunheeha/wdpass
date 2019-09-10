@@ -13,7 +13,8 @@ try:
     import py3_sg as py_sg
 except ImportError as e:
     print(e)
-    print("You need to install the 'py_sg' module.")
+    print("You need to install the 'py3_sg' module.")
+    print("More info: https://github.com/7aman/py3_sg")
     sys.exit(1)
 
 BLOCK_SIZE = 512
