@@ -277,7 +277,7 @@ def unlock(save_passwd, unlock_with_saved_passwd):
         pwd_hashed = mk_password_block(passwd, iteration, salt)
     else:
         success("Unlock use saved password")
-        passwd_bin = open("passwd.bin", "r")
+        passwd_bin = open("passwd.bin", "r+b")
         pwd_hashed = pickle.load(passwd_bin)
 
     if save_passwd:
