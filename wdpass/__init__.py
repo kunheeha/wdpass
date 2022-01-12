@@ -21,6 +21,7 @@ BLOCK_SIZE = 512
 HANDSTORESECURITYBLOCK = 1
 dev = None
 
+
 def parse_args(argv):
     parser = argparse.ArgumentParser(add_help=True)
     parser.add_argument(
@@ -80,6 +81,7 @@ def parse_args(argv):
         help="Force device path (ex. /dev/sdb). Usually you don't need this option.")
 
     return parser.parse_args(argv)
+
 
 def fail(msg):
     '''Print fail message with red leading characters'''
@@ -291,7 +293,8 @@ def unlock(save_passwd, unlock_with_saved_passwd):
     cdb[8] = pwblen + 8
 
     try:
-        py_sg.write(dev, _scsi_pack_cdb(cdb), _scsi_pack_cdb(pw_block) + pwd_hashed)
+        py_sg.write(dev, _scsi_pack_cdb(cdb),
+                    _scsi_pack_cdb(pw_block) + pwd_hashed)
         success("Device unlocked.")
     except:
         fail("Wrong password? Or something bad is happened. Try again")
@@ -361,12 +364,13 @@ def change_password():
 
     cdb[8] = 8 + 2 * pwblen
     try:
-        py_sg.write(dev, _scsi_pack_cdb(cdb), _scsi_pack_cdb(pw_block) + old_passwd_hashed + new_passwd_hashed)
+        py_sg.write(dev, _scsi_pack_cdb(cdb), _scsi_pack_cdb(
+            pw_block) + old_passwd_hashed + new_passwd_hashed)
         success("Password changed.")
     except:
         fail("Error changing password: Wrong password or something bad is happened.")
         pass
-    
+
 
 def secure_erase(cipher_id=0):
     '''
@@ -468,7 +472,7 @@ def enable_mount(device):
             f"echo 1 > /sys/block/{rp}/device/delete",
             shell=True
         )
-        
+
         subprocess.Popen(
             f"echo \"- - -\" > /sys/class/scsi_host/host{hn}/scan",
             shell=True
@@ -498,14 +502,16 @@ def get_device(device):
         return get_device_info()[0]
 
 # Main function, get parameters and manage operations
+
+
 def main():
     global dev
     title("WD Passport Ultra linux utility v0.1 by duke")
     args = parse_args(sys.argv[1:])
     if len(sys.argv) == 1:
         args.status = True
-        
-    check_root_user() 
+
+    check_root_user()
     DEVICE = get_device(args.device)
     try:
         dev = open(DEVICE, "r+b")
@@ -526,7 +532,6 @@ def main():
 
     if args.change_passwd:
         change_password()
-
 
     if args.erase:
         question(

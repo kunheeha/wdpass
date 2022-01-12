@@ -11,7 +11,7 @@ with open("README.md", encoding='utf-8') as f:
 
 setup(name='wdpass',
       version=__version__,
-      description='Wester Digital My Passport Utility',
+      description='Western Digital My Passport Utility',
       long_description=long_description,
       long_description_content_type='text/markdown',
       url='http://github.com/7aman/wdpass',
@@ -22,7 +22,7 @@ setup(name='wdpass',
       entry_points={
           'console_scripts': ['wdpass=wdpass:main'],
       },
-      install_requires=["py3_sg"],
+      install_requires=["py3_sg >= 0.0.3"],
       python_requires='>=3.6',
       zip_safe=False,
       keywords='HDD WD MyPassport Unlocker WesternDigital',
