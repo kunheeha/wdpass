@@ -4,7 +4,7 @@ WD Passport Ultra Complete Utilities for Linux.
 Thanks to:
 - [Dan Lenski](https://github.com/dlenski) for [py_sg](https://pypi.org/project/py_sg/) (Python2)
 - [0-duke](https://github.com/0-duke) and [derekhe](https://github.com/derekhe) for [wdpassport-utils](https://github.com/derekhe/wdpassport-utils) (Python2)
-- [crypto-universe](https://github.com/crypto-universe/) for Python3 migration of [py_sg](https://github.com/crypto-universe/py_sg) and [wdpassport-utils](https://github.com/crypto-universe/wdpassport-utils)
+- [crypto-universe](https://github.com/crypto-universe/) for Python3 migration of [py_sg](https://github.com/crypto-universe/py3_sg) and [wdpassport-utils](https://github.com/crypto-universe/wdpassport-utils)
 
 ## Intro
 
@@ -29,10 +29,11 @@ sudo python3 -m pip install https://github.com/7aman/wdpass/archive/master.zip
 
 ### Install an old version from PyPi
 
-PyPi package is currently pointed to the latest version but it works for most cases.
+PyPi package is not based on the latest version but it works for most cases.
 
 ```shell
-sudo python3 -m pip install wdpass==0.0.3
+# install v0.0.3
+sudo python3 -m pip install wdpass
 ```
 
 ## Usage
