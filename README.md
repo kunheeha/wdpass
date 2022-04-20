@@ -12,19 +12,27 @@ This script let you unlock, change password and erase Western Digital Passport d
 
 ## Install
 
-### Install Dependencies:
-- `lsscsi` package or any package provides `lsscsi` command.
-- `<Python.h>` header file in libraries. (`python3-dev` or `python3-devel` package)
+### Install the latest version manually
 
-For example on Fedora:
+- Install `lsscsi` package or any package that provides `lsscsi` command.
+- Provide `<Python.h>` header file by installing Python Developer Package. (usually `python3-dev` or `python3-devel`)
+- Install the latest py3_sg from [py3_sg](https://github.com/crypto-universe/py3_sg)
+- And finally install `wdpass` from this repository.
+
+For example on Ubuntu:
 
 ```shell
-sudo dnf install lsscsi python3-devel
+sudo apt install lsscsi python3-dev
+sudo python3 -m pip install https://github.com/crypto-universe/py3_sg/archive/master.zip
+sudo python3 -m pip install https://github.com/7aman/wdpass/archive/master.zip
 ```
 
-### Install `wdpass`
+### Install an old version from PyPi
+
+PyPi package is currently pointed to the latest version but it works for most cases.
+
 ```shell
-sudo python3 -m pip install wdpass
+sudo python3 -m pip install wdpass==0.0.3
 ```
 
 ## Usage
